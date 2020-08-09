@@ -4,7 +4,6 @@ import { Modal, Row, Col, Container, Button } from 'react-bootstrap';
 import { MdRemoveShoppingCart,MdRemove } from 'react-icons/md';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { RiAddLine } from 'react-icons/ri';
-
 import { deleteProduct, changeQuantity, clearCart } from '../actions/cartActions';
 
 class CartModal extends React.Component {
@@ -40,15 +39,14 @@ class CartModal extends React.Component {
                                                 </Col>
                                                 <Col className="my-auto" xs={4} md={6}>
                                                     <h5 className="font-weight-bold">€{product.price.toFixed(2)}</h5>
-                                                    <p>{product.name}</p>
+                                                    <p className="m-0">{product.name}</p>
                                                     <p>Size: {product.size}</p>
-                                                    
                                                     <div className="quantity-selectors">
-                                                        <Button disabled={product.quantity === 1} onClick={()=> this.handleQuantityChange(i, -1)}>
+                                                        <Button className="p-1 btn-custom mr-1" disabled={product.quantity === 1} onClick={()=> this.handleQuantityChange(i, -1)}>
                                                             <MdRemove size={20} />
                                                         </Button>
                                                         {product.quantity}
-                                                        <Button onClick={()=> this.handleQuantityChange(i, 1)}>
+                                                        <Button className="p-1 btn-custom ml-1" onClick={()=> this.handleQuantityChange(i, 1)}>
                                                            <RiAddLine size={20} />
                                                         </Button>
                                                     </div>
@@ -58,7 +56,6 @@ class CartModal extends React.Component {
                                                         <TiDeleteOutline color="grey" size={25} />
                                                     </Button>
                                                 </Col>
-                                   
                                             </Row>
                                             <div className="product-divider" />
                                         </>
@@ -70,20 +67,26 @@ class CartModal extends React.Component {
                                         <MdRemoveShoppingCart color="grey" className="mb-3" size={30}/>
                                         <h6 className="text-muted"> Your cart is currently empty </h6>
                                     </div>
-                                   
-                                    
                                 </Row>
                         }
-                        
+                        {this.props.products.length > 0 ?
+                            <div className="order-total float-right">
+                                <p>Order Total: €{this.props.orderTotal.toFixed(2)}</p>
+                            </div> : null}
                         </Container> 
                     </Modal.Body>
                 <Modal.Footer className="no-border">
                     {this.props.products.length > 0 ?
+                     <div className="checkout-buttons">
                     <Button onClick={this.props.clearCart} variant="danger">
                         CLEAR CART
                     </Button>
-                        
-                        : null}
+                    <Button onClick={this.props.handleClose} className="btn-custom ml-2">
+                        CHECKOUT       
+                    </Button>
+                     </div>
+                : null}
+
                     </Modal.Footer>
                 </Modal>
            

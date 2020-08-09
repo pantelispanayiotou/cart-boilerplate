@@ -13,6 +13,10 @@ class ProductCard extends React.Component {
         }
     }
 
+    /*
+        When the user adds a product to their cart, an object is created containing all the necessary 
+        information. Then an action is fired to pass the info into the products array inside the reducer.
+    */
     addToCart = (product) => {
         let item = {};
         item.name = product.name;
@@ -31,16 +35,27 @@ class ProductCard extends React.Component {
     handleClose = () => {
         this.setState({showModal:false,size: ''})
     }
+    /*
+        When there is a size change, i use the event object to set the new size selected inside the state
+    */
     handleInputChange = (event) => {
         this.setState({
             size: event.target.value
         });
     } 
+    /*
+        This function renders the sizes of each product inside option divs for the user to select them.
+    */
     _renderSizes = (product) => {
-        return product.sizes.map((size) => {
-            return <option value={size}>{size}</option>
-        })
+        if (product.sizes.length > 0) {
+            return product.sizes.map((size) => {
+                return <option value={size}>{size}</option>
+            })
+        }
     }
+    /* 
+        A modal for each product that contains the necessary details
+    */
     _renderModal = (product) => {
         return (
         <Modal size="lg" show={this.state.showModal} onHide={this.handleClose}>

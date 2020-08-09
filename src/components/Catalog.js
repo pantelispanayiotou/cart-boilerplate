@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Col, Row, } from 'react-bootstrap';
 import _ from 'lodash';
 import ProductCard from './ProductCard';
-
 var catalogData = require('../catalog.json');
 
 class Catalog extends React.Component {
@@ -16,7 +15,10 @@ class Catalog extends React.Component {
     loadCatalog = () => {
         this.setState({ products: catalogData.products});
     }
-
+    /*
+        When the component mounts then the json file with the products is loaded 
+        to the local state
+    */
     componentDidMount() {
         this.loadCatalog();
         

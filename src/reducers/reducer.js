@@ -33,6 +33,11 @@ function calculateTotal(products) {
 const reducer = (state = initState, action) => {
    
     switch (action.type) {
+        /*  This is when the user adds an item to the cart. First it checks if the item is present in 
+            the cart so that it doesn't have to add it again and update only the quantity. If the item 
+            is present then it uses the index of it to update it. If it is not present then the item 
+            is added to the array
+        */
         case "ADD_TO_CART": {
             let duplicateIndex = isDuplicate(state.products, action.payload);
             var items = null;
@@ -45,12 +50,20 @@ const reducer = (state = initState, action) => {
             var orderTotal = calculateTotal(items);
             return { ...state, products: items, orderTotal }
         }
+        /* An item is deleted based on the index that i got from the action. Because we cannot directly edit the state
+        (immutability) we create a copy of the original array using the spread operators. The new array is consisted of the 
+        items from the start of the array until the index we don't won't and i also concatenate the items after the unwanted 
+        index
+        */
         case "DELETE_PRODUCT": {
             var newProducts = [...state.products.slice(0, action.payload), ...state.products.slice(action.payload + 1)];
             var orderTotal = calculateTotal(newProducts);
-           
             return {...state, products: newProducts, orderTotal }
         }
+        /* 
+        The quantity is changed based on the payload value we get from the action. Again, we create a new products array 
+        and based on the index and quantity value i update the quantity of the specific item. 
+        */
         case "CHANGE_QUANTITY": {
             var index = action.payload.index;
             var newQuantity = action.payload.newQuantity;
@@ -59,8 +72,11 @@ const reducer = (state = initState, action) => {
             var orderTotal = calculateTotal(items);
             return { ...state, products: items, orderTotal }
         }
+        /*
+        The products array and the orderTotal are reset if the clear cart action is fired.
+        */
         case "CLEAR_CART": {
-            return {...state, products: []}
+            return {...state, products: [], orderTotal: 0}
         }
         default: {
             return state;

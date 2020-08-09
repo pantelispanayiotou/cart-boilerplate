@@ -37,6 +37,10 @@ class Cart extends React.Component {
     }
 }
 
+/*
+    Fetching the values needed from the reducer and matching them to the
+    corresponding props. Those props are sent to the CartModal Component.
+*/
 const mapStateToProps = reducer => {
     return {
         products: reducer.products, 

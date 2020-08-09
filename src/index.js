@@ -7,12 +7,28 @@ import { createStore } from 'redux';
 import * as serviceWorker from './serviceWorker';
 import reducer from './reducers/reducer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const store = createStore(reducer);
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage';
+
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+/* 
+  Persisting the reducer data over browser refresh, using the browser's local storage
+*/
+const persistedReducer = persistReducer(persistConfig, reducer)
+const store = createStore(persistedReducer);
+let persistor = persistStore(store)
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+    <PersistGate loading={null} persistor={persistor}>
+        <App />
+    </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
