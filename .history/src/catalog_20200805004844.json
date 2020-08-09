@@ -1,9 +1,0 @@
-{
-    "products": [
-        {"id": "1","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10, "picture": "image1.jpg"}, 
-        {"id": "2","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10, "picture": "image2.jpg"}, 
-        {"id": "3","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10, "picture": "image3.jpg"}, 
-        // {"id": "4","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10, "picture": "image4.jpg"}, 
-        // {"id": "5","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10, "picture": "image5.jpg"}
-    ]
-}
