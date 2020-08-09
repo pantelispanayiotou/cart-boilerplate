@@ -8,7 +8,7 @@ const NavigationBar = () => {
       <div className="cover-image">
         <Navbar className={"navbar-background"} expand="lg">
         <Navbar.Brand className="mx-auto" href="#home">
-          <img src={logo} height={100} width={100} />
+          <img alt="logo" src={logo} height={100} width={100} />
         </Navbar.Brand>
           <Nav>
               <Cart />

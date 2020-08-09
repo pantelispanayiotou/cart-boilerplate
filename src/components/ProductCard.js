@@ -49,7 +49,7 @@ class ProductCard extends React.Component {
     _renderSizes = (product) => {
         if (product.sizes.length > 0) {
             return product.sizes.map((size) => {
-                return <option value={size}>{size}</option>
+                return <option key={size.toString()} value={size}>{size}</option>
             })
         }
     }
@@ -68,7 +68,7 @@ class ProductCard extends React.Component {
                     <Container fluid>
                         <Row>
                             <Col md={6}>
-                                <img className="img-fluid" src={require(`../assets/${product.picture}`)} />
+                                <img alt="sportswear in modal" className="img-fluid" src={require(`../assets/${product.picture}`)} />
                             </Col>
                             <Col md={6}>
                                 

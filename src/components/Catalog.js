@@ -30,11 +30,11 @@ class Catalog extends React.Component {
         
         return (
             <Container fluid="md">
-                {chunks && chunks.map((item) => (
-                <Row className="mt-4">
+                {chunks && chunks.map((item,i) => (
+                <Row key={i.toString()} className="mt-4">
                     { item.map((product) => {
                     return (
-                        <Col className="mt-2" md={4}>
+                        <Col key={product.name} className="mt-2" md={4}>
                             <ProductCard product={product} />
                             
                         </Col>

@@ -33,20 +33,20 @@ class CartModal extends React.Component {
                                 this.props.products.map((product,i) => {
                                     return (
                                         <>
-                                            <Row>
+                                            <Row key={product.name.toString()}>
                                                 <Col xs={4} md={3}>
-                                                    <img height="120" width="120" className="img-fluid" src={require(`../assets/${product.picture}`)} />
+                                                    <img alt="sportswear" height="120" width="120" className="img-fluid" src={require(`../assets/${product.picture}`)} />
                                                 </Col>
                                                 <Col className="my-auto" xs={4} md={6}>
                                                     <h5 className="font-weight-bold">€{product.price.toFixed(2)}</h5>
                                                     <p className="m-0">{product.name}</p>
                                                     <p>Size: {product.size}</p>
                                                     <div className="quantity-selectors">
-                                                        <Button className="p-1 btn-custom mr-1" disabled={product.quantity === 1} onClick={()=> this.handleQuantityChange(i, -1)}>
+                                                        <Button className="p-1 btn-custom mr-2" disabled={product.quantity === 1} onClick={()=> this.handleQuantityChange(i, -1)}>
                                                             <MdRemove size={20} />
                                                         </Button>
                                                         {product.quantity}
-                                                        <Button className="p-1 btn-custom ml-1" onClick={()=> this.handleQuantityChange(i, 1)}>
+                                                        <Button className="p-1 btn-custom ml-2" onClick={()=> this.handleQuantityChange(i, 1)}>
                                                            <RiAddLine size={20} />
                                                         </Button>
                                                     </div>
@@ -71,7 +71,7 @@ class CartModal extends React.Component {
                         }
                         {this.props.products.length > 0 ?
                             <div className="order-total float-right">
-                                <p>Order Total: €{this.props.orderTotal.toFixed(2)}</p>
+                                <p><span className="font-weight-bold">Order Total:</span> €{this.props.orderTotal.toFixed(2)}</p>
                             </div> : null}
                         </Container> 
                     </Modal.Body>
