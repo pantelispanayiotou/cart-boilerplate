@@ -1,0 +1,9 @@
+{
+    "products": [
+        {"id": "1","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10}, 
+        {"id": "2","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10}, 
+        {"id": "3","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10}, 
+        {"id": "4","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10}, 
+        {"id": "5","name": "Shoe 1", "description": "This is a shoe","category": "shoes", "price": 10}
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "products": [
+        {"id": "1","name": "Adidas Striped", "category": "shoes", "price": 10, "picture": "image1.jpg", "sizes": [40, 41, 42] }, 
+        {"id": "2","name": "Adidas Run VI", "category": "shoes", "price": 10, "picture": "image2.jpg", "sizes": [40, 41, 42]}, 
+        {"id": "3","name": "Nike Walk", "category": "shoes", "price": 10, "picture": "image3.jpg", "sizes": [38, 39, 40,41]},
+        {"id": "4","name": "Nike Sneakers", "category": "shoes", "price": 10, "picture": "image4.jpg", "sizes": [37,39,40,41]}, 
+        {"id": "5","name": "Adidas T-Shirt","category": "shoes", "price": 10, "picture": "image5.jpg", "sizes": ["S", "M", "L"]}
+        
+    ]
+}

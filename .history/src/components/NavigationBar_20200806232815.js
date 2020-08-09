@@ -1,29 +1,33 @@
 import React from 'react';
-import { Navbar,Nav, Badge } from 'react-bootstrap';
+import { Navbar,Nav, Badge, Container, Col, Row } from 'react-bootstrap';
 import logo from '../assets/logo.png'
 import style from '../style.css';
 import { FaBars,FaShoppingCart } from "react-icons/fa";
 
 const Menu = () => {
-    return (
+  return (
+      <div className="cover-image">
         <Navbar className={"navbar-background"} expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand className="mx-auto" href="#home">
           <img src={logo} height={100} width={100} />
         </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <FaBars color="white" />
-          </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav>
             <Nav.Link href="#home">
               <FaShoppingCart size={25} color="white" />
               <Badge pill variant="danger">4</Badge>
             </Nav.Link>
-
-    </Nav>
-
-  </Navbar.Collapse>
-</Navbar>
+        </Nav>
+      </Navbar>
+      <Container>
+        <Row>
+        <div className="cover-tag mx-auto"> 
+            <h1>SALE MODE: ON</h1>
+            <p>Check out our latest offers!</p>
+        </div>
+        </Row>
+      </Container>
+      
+      </div>
     )
 }
 

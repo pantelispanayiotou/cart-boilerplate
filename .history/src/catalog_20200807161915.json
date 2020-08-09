@@ -1,0 +1,10 @@
+{
+    "products": [
+        {"id": "1","name": "Adidas Striped", "description": "Featuring a mesh upper boasting suedw leather overlays, the injected lightweight Phylon midsole and rubber waffle outsole provide extra durability and cushioning.", "category": "shoes", "price": 15, "picture": "image1.jpg", "sizes": [40, 41, 42] }, 
+        {"id": "2","name": "Adidas Run VI","description": "Boasting a premium white leather upper, grey 3-Stripe branding ensures a signature retro feel while a sleek rubber cupsole completes this street-ready kick", "category": "shoes", "price": 13, "picture": "image2.jpg", "sizes": [40, 41, 42]}, 
+        {"id": "3","name": "Nike SB Walk", "description": "Skate style made simple, Nike SB keep things black and white. Always versatile, this Portmore II Solarsoft sneaker looks good whether paired with a board or not.","category": "shoes", "price": 18, "picture": "image3.jpg", "sizes": [38, 39, 40,41]},
+        {"id": "4","name": "Nike Sneakers", "description": " The fabric skate shoe sits on a dynamic vulcanised outsole while strong Swoosh branding gives an authentic finish.", "category": "shoes", "price": 19, "picture": "image4.jpg", "sizes": [37,39,40,41]}, 
+        {"id": "5","name": "Adidas T-Shirt","category": "shoes", "price": 10, "picture": "image5.jpg", "sizes": ["S", "M", "L"]}
+        
+    ]
+}

@@ -1,0 +1,26 @@
+html * {
+    font-family: 'Open Sans', sans-serif;
+}
+.navbar-background {
+    background-color: #055C9D
+}
+.navbar-link {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+.navbar-light .navbar-toggler {
+    color: transparent;
+}
+
+.card-box-shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border: none!important;
+}
+
+.cover-image {
+    background-image: url('assets/cover.jpg');
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
